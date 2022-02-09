@@ -35,7 +35,11 @@
 	display:inline-block;
 	margin-left:5%;
 }
-  </style>
+
+li.seasons a{
+   /* color:red; */
+}
+    </style>
  </head>
  <body>
 	<header role="banner">
@@ -58,11 +62,13 @@
     The colors of the seasonal images are as follows:
         <ul class="colors">
             <li>Spring: <b>#2B7129</b></li>
-            <li>Summer: <b>#EBA52B</b></li>
+            <li>Summer: <b>#EBA52B</b></li>  
             <li>Fall: <b>#A81124</b></li>
             <li>Winter: <b>#005393</b></li>
         </ul>
     </p>
+    <p>
+
     <p>
     Aesthetic gentrify YOLO McSweeney's typewriter single-origin coffee. Slow-carb hella listicle lomo, Helvetica single-origin coffee butcher stumptown. Chambray try-hard church-key mumblecore, tote bag PBR cardigan. Retro Austin Brooklyn, blog Intelligentsia gentrify jean shorts sartorial bicycle rights gastropub. Aesthetic wayfarers Pitchfork, tattooed Carles quinoa meh leggings distillery pork belly banjo. Umami cred lumbersexual skateboard, pork belly Tumblr vegan letterpress. Fixie bicycle rights butcher chillwave, gluten-free health goth Echo Park locavore whatever.
     <img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
@@ -85,5 +91,77 @@
     </footer>
   </main>
   <script src="js/main.js"></script>
+  /*
+  change the src of the img with an id of logo
+  change the src of the img with the id of wear
+
+Spring: #2B7129
+Summer: #EBA52B
+Fall: #A81124
+Winter: #005393
+  */
+  <script>
+     $("document").ready(function(){
+          $("li.seasons a ").click(function(e){
+              e.preventDefault();
+
+              let season = $(this).attr("href");
+
+              if (season == "Spring"){
+                $("#logo").attr("src", "images/spring.gif");
+
+                $("#wear").attr("src", "images/spring-wear.jpg");
+
+                $("html").css("background-color", "#2B7129");
+
+                alert("It's getting a bit hotter outside!");
+              }
+
+              else if (season == "Summer"){
+                $("#logo").attr("src", "images/summer.gif");
+
+                $("#wear").attr("src", "images/summer-wear.jpg");
+
+                $("html").css("background-color", "#EBA52B");
+
+                alert("Temperatures are higher than usual for obvious reasons!");
+              }
+
+              else if (season == "Fall"){
+                $("#logo").attr("src", "images/fall.gif");
+
+                $("#wear").attr("src", "images/fall-wear.jpg");
+
+                $("html").css("background-color", "#A81124");
+
+                alert("We're losing daylight, enjoy it while it lasts.");
+              }
+
+              else if (season == "Winter"){
+                $("#logo").attr("src", "images/winter.gif");
+
+                $("#wear").attr("src", "images/winter-wear.jpg");
+
+                $("html").css("background-color", "#005393");
+
+                alert("Wow, it's freezing.");
+              }
+              
+              else {
+                $("#logo").attr("src", "images/four-seasons.gif");
+
+                $("#wear").attr("src", "images/300x400.png");
+
+                $("html").css("background-color", "#ccc");
+
+                alert("You clicked on the Default page, BORING!");
+              }
+           
+         //alert("I'm clicked!");
+        
+        });
+    });
+
+  </script>
   </body>
 </html>
